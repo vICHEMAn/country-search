@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu:400,700&display=swap");
+
+$grey: rgb(237, 237, 237);
+
+html {
+  // font-family: "Open Sans", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+  box-sizing: border-box;
+  background: $grey;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.search {
+  margin: 10vh auto auto;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  form {
+    position: relative;
+    margin: 0 auto;
+    width: 200px;
+    label {
+      display: block;
+      position: absolute;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all ease 0.2s;
+      top: 0;
+      padding-left: 5px;
+      cursor: text;
+    }
+    input {
+      display: block;
+      position: aboslute;
+      width: 200px;
+      border: none;
+      border-bottom: 2px solid black;
+      font-size: 18px;
+      transition: all ease 0.2s;
+      background: rgb(237, 237, 237);
+      &:focus,
+      &:active,
+      &:valid {
+        outline: none;
+        & + label {
+          top: -20px;
+          font-size: 12px;
+          cursor: default;
+          padding-left: 0;
+        }
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+  .search-options {
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 5px;
+    max-height: 350px;
+    overflow: scroll;
+    background: white;
+    p {
+      font-size: 14px;
+      padding: 10px;
+      &:hover {
+        background: lightgrey;
+      }
+    }
+  }
+}
+
+.selected-country {
+  margin: 10vh auto auto;
+  padding: 50px 25px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  width: 300px;
+  background: white;
+  .top {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    img {
+      height: 25px;
+      margin: 0 auto 10px;
+    }
+    h2 {
+      text-align: center;
+      margin: 0 5px;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    border-left: 4px solid $grey;
+    padding-left: 10px;
+    h4 {
+      font-size: 12px;
+      margin: 5px 0 0;
+    }
+    p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+  }
+  .exchange-label {
+    font-size: 14px;
+    text-align: center;
+    margin: 30px 0 10px;
+  }
+  .exchange {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto 10px;
+    background: $grey;
+    width: 100%;
+    border-radius: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    .exchange-flag {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      margin: auto 10px;
+    }
+    p {
+      margin: auto 0;
+      font-size: 12px;
+    }
+    input {
+      border: none;
+      width: auto;
+      text-align: right;
+      padding: 2px 4px;
+      margin: auto 5px auto auto;
+      font-size: 14px;
+      font-weight: bold;
+      background: $grey;
+      &:focus,
+      &:active,
+      &:valid {
+        outline: none;
+      }
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+    .calculated-exchange {
+      font-weight: bold;
+      font-weight: bold;
+      font-size: 14px;
+      margin: auto 5px auto auto;
+      padding: 2px 4px;
+      width: auto;
+      text-align: right;
+    }
+  }
+  button {
+    border: 2px solid black;
+    background: none;
+    font-weight: bold;
+    padding: 5px 5px;
+    margin: 30px auto 0;
+    font-size: 12px;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+}
+
+.fade-fast-enter {
+  opacity: 0.01;
+  &.fade-fast-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+  }
+}
+
+.fade-fast-exit {
+  opacity: 1;
+
+  &.fade-fast-exit-active {
+    opacity: 0.01;
+    transition: opacity 150ms ease-in;
+  }
+}
